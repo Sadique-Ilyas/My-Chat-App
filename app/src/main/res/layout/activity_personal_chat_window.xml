@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.PersonalChatWindowActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/personal_toolbar_layout" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/personalRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        app:layout_dodgeInsetEdges="bottom" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/innerConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:layout_insetEdge="bottom">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/innerConstraint"
+            app:layout_constraintEnd_toStartOf="@+id/sendMessage"
+            app:layout_constraintStart_toStartOf="@id/innerConstraint"
+            app:layout_constraintTop_toTopOf="@+id/innerConstraint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/personalMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Write some message" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/sendMessage"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/round_button"
+            android:src="@drawable/ic_send"
+            app:layout_constraintBottom_toBottomOf="@id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="@id/innerConstraint"
+            app:layout_constraintTop_toTopOf="@id/textInputLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
